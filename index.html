@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GuardianLabs - Updates</title>
+    <title>GuardianLabs | Home</title>
     <link rel="icon" type="image/png" href="https://i.ibb.co/mrYh7BM4/New-Project-1.png">
-    <meta name="title" content="GuardianLabs Updates">
-    <meta name="description" content="Access the latest system logs and official releases for Guardian Radio V1.">
+    <meta name="title" content="Welcome to the Hub.">
+    <meta name="description" content="Your central destination for all things GuardianLabs. Stay ahead of the curve with our latest development pulses and real-time project logs.">
 
-    <meta property="og:title" content="GuardianLabs | Updates">
-    <meta property="og:description" content="Access the latest system logs and official releases for GuardianLabs">
+    <meta property="og:title" content="Welcome to the Hub.">
+    <meta property="og:description" content="Your central destination for all things GuardianLabs. Stay ahead of the curve with our latest development pulses and real-time project logs.">
     <meta property="og:image" content="https://i.ibb.co/Kj2pwB4z/Guardian-Labs-Banner-1.png">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://i.ibb.co/Kj2pwB4z/Guardian-Labs-Banner-1.png">
     <meta name="theme-color" content="#3a3a3a">
+    
     <style>
         :root { 
             --bg: #050505; 
@@ -23,10 +24,8 @@
             --muted: #666;
             --glass: rgba(20, 20, 20, 0.7);
         }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg); }
-        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; border: 2px solid var(--bg); }
-        ::-webkit-scrollbar-thumb:hover { background: #a020f0; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body { 
             background-color: var(--bg); 
@@ -34,27 +33,12 @@
             background-size: 30px 30px;
             color: var(--text); 
             font-family: 'Inter', sans-serif; 
-            margin: 0; 
             line-height: 1.6;
-            overflow-y: scroll; 
-        }
-
-        .logo { 
-            font-weight: 900; 
-            letter-spacing: 2px; 
-            text-decoration: none; 
-            color: #fff; 
-            font-size: 1.2rem; 
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
             display: flex;
-            align-items: center;
-            gap: 6px; 
-        }
-
-        .logo img {
-            height: 25px; 
-            width: auto;
-            object-fit: contain;
-            transition: transform 0.3s ease;
+            flex-direction: column;
         }
 
         nav {
@@ -72,99 +56,115 @@
             align-items: center;
         }
 
-        .logo { font-weight: 900; letter-spacing: 2px; text-decoration: none; color: #fff; font-size: 1rem; }
+        .logo { 
+            font-weight: 900; 
+            letter-spacing: 2px; 
+            text-decoration: none; 
+            color: #fff; 
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 6px; 
+        }
+        
+        .logo img { 
+            height: 25px; 
+            width: auto; 
+            object-fit: contain; 
+            transition: transform 0.3s ease; 
+        }
 
         .nav-links { display: flex; gap: 30px; align-items: center; }
         .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
         .nav-links a:hover { color: #fff; }
 
-        .container { 
-            max-width: 1200px; 
-            margin: 80px auto; 
-            padding: 0 20px; 
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-        
-        h1 { font-size: 4rem; font-weight: 900; margin: 0; letter-spacing: -3px; line-height: 0.9; grid-column: span 2; }
-        h1 span { color: var(--accent); }
-        .subtitle { color: var(--muted); margin-top: 20px; margin-bottom: 30px; font-size: 1.2rem; font-weight: 500; grid-column: span 2; }
-
-        .card-link { text-decoration: none; color: inherit; display: block; }
-
-        .big-card {
+        .hero {
             position: relative;
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
-            background: rgba(10, 10, 10, 0.8);
-            border: 1px solid #1a1a1a;
-            border-radius: 24px;
-            overflow: hidden;
-            height: 100%;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .big-card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 0 30px rgba(138, 43, 226, 0.2);
-            background: rgba(15, 15, 15, 0.9);
-        }
-
-        .new-ribbon-wrapper {
-            width: 100px;
-            height: 100px;
-            overflow: hidden;
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            z-index: 10;
-        }
-
-        .new-ribbon {
-            font-size: 0.7rem;
-            font-weight: 900;
-            color: #fff;
-            text-transform: uppercase;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            line-height: 25px;
-            transform: rotate(45deg);
-            width: 150px;
-            display: block;
-            background: var(--accent);
-            box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
-            position: absolute;
-            top: 22px;
-            right: -35px;
-            letter-spacing: 2px;
+            padding: 20px;
         }
 
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 900; margin: 0; letter-spacing: -2px; z-index: 10; }
+        .hero p { max-width: 600px; color: var(--muted); font-size: 1.1rem; margin: 20px 0 40px; z-index: 10; }
 
-        .card-image {
-            min-height: 280px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .card-image::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-
-        .card-content { padding: 40px; flex-grow: 1; display: flex; flex-direction: column; }
-        .tag { color: var(--accent); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 15px; letter-spacing: 2px; }
-        .big-card h2 { font-size: 2.2rem; margin: 0 0 15px 0; line-height: 1.1; font-weight: 900; letter-spacing: -1px; }
-        .big-card p { color: #aaa; font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px; }
-        .card-footer { margin-top: auto; font-size: 0.85rem; color: var(--muted); font-weight: 600; letter-spacing: 1px; }
+        .hero-btns { display: flex; gap: 15px; z-index: 20; }
         
-        @media (max-width: 900px) { 
-            .container { grid-template-columns: 1fr; }
-            h1, .subtitle { grid-column: span 1; }
-            nav { padding: 20px 40px; }
+        .btn { 
+            padding: 14px 32px; 
+            border-radius: 8px; 
+            font-weight: 700; 
+            text-decoration: none; 
+            font-size: 0.9rem; 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+
+        .btn-primary { 
+            background: var(--accent); 
+            color: #fff; 
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3); 
+            border: 1px solid transparent;
+        }
+
+        .btn-primary:hover { 
+            background: #a020f0; 
+            transform: translateY(-3px) scale(1.05); 
+            box-shadow: 0 8px 25px rgba(138, 43, 226, 0.5); 
+        }
+
+        .btn-outline { 
+            border: 1px solid #333; 
+            color: #fff; 
+            background: rgba(255,255,255,0.02); 
+        }
+
+        .btn-outline:hover { 
+            background: rgba(255, 255, 255, 0.08); 
+            border-color: #fff; 
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .btn:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .float-img {
+            position: absolute;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            animation: float 8s ease-in-out infinite;
+            z-index: 1;
+            opacity: 0.8;
+            max-width: 280px;
+        }
+
+        .img-top-left { top: 10%; left: 10%; animation-delay: 0s; width: 15%; }
+        .img-mid-left { top: 40%; left: 5%; animation-delay: 1s; width: 20%; }
+        .img-btm-left { bottom: 10%; left: 12%; animation-delay: 2s; width: 18%; }
+
+        .img-top-right { top: 10%; right: 10%; animation-delay: 0.5s; width: 15%; }
+        .img-mid-right { top: 40%; right: 5%; animation-delay: 1.5s; width: 20%; }
+        .img-btm-right { bottom: 10%; right: 12%; animation-delay: 2.5s; width: 18%; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(3deg); }
+        }
+
+        @media (max-height: 700px) {
+            .hero h1 { font-size: 3rem; }
+            .float-img { max-width: 180px; }
+        }
+
+        @media (max-width: 900px) {
+            .float-img { display: none; }
+            nav { padding: 0 40px; }
         }
     </style>
 </head>
@@ -176,28 +176,32 @@
             <span>LABS Updates</span>
         </a>
         <div class="nav-links">
-            <a href="https://updates.guardiandevlabs.com">Updates</a>
+            <a href="updates/">Updates</a>
         </div>
     </nav>
 
-    <div class="container">
-        <h1>Updates<span>.</span></h1>
-        <p class="subtitle">Real-time intelligence and system logs.</p>
+   <section class="hero">
+        <img src="https://i.ibb.co/gKgj399/Loadingscreen.png" class="float-img img-top-left">
+        <img src="https://i.ibb.co/KxrcKrw1/Radio-1.png" class="float-img img-mid-left">
+        <img src="https://i.ibb.co/4ndzX46Q/Chat.png" class="float-img img-btm-left">
 
-        <a href="guardianradiov1/" class="card-link">
-            <div class="big-card">
-                <div class="new-ribbon-wrapper">
-                    <div class="new-ribbon">New</div>
-                </div>
-                <div class="card-image" style="background-image: url('https://i.ibb.co/VWw9kmrn/Guardian-Radio.png');"></div>
-                <div class="card-content">
-                    <div class="tag">Official Release</div>
-                    <h2>Guardian Radio V1</h2>
-                    <p>A modern, powerful radio system with dedicated Police RTO, Civilian interfaces, and unlimited channel scalability.</p>
-                    <div class="card-footer">SYSTEM LOG // 02.02.26</div>
-                </div>
-            </div>
-        </a>
+        <img src="https://i.ibb.co/N6WsrhNp/Reports.png" class="float-img img-top-right">
+        <img src="https://i.ibb.co/0jNWyv8C/Tag.png" class="float-img img-mid-right">
+        <img src="https://i.ibb.co/PZy4w0xq/Duty.png" class="float-img img-btm-right">
+
+        <h1>Welcome to the Hub<span>.</span></h1>
+        
+        <p>
+            Your central destination for all things GuardianLabs. 
+            Stay ahead of the curve with our latest development pulses 
+            and real-time project logs.
+        </p>
+
+        <div class="hero-btns">
+            <a href="updates/" class="btn btn-primary">Explore Updates</a>
+            <a href="https://discord.gg/PUJR684D5R" class="btn btn-outline">Community</a>
+        </div>
+    </section>
 
 </body>
 </html>
