@@ -8,13 +8,6 @@
     <meta name="title" content="GuardianLabs Updates">
     <meta name="description" content="Access the latest system logs and official releases for Guardian Radio V1.">
 
-    <meta property="og:title" content="GuardianLabs - Updates">
-    <meta property="og:description" content="Access the latest system logs and official releases for GuardianLabs">
-    <meta property="og:image" content="https://i.ibb.co/Kj2pwB4z/Guardian-Labs-Banner-1.png">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://i.ibb.co/Kj2pwB4z/Guardian-Labs-Banner-1.png">
-    <meta name="theme-color" content="#3a3a3a">
     <style>
         :root { 
             --bg: #050505; 
@@ -30,31 +23,11 @@
 
         body { 
             background-color: var(--bg); 
-            background-image: radial-gradient(circle, #1a1a1a 1px, transparent 1px);
-            background-size: 30px 30px;
             color: var(--text); 
             font-family: 'Inter', sans-serif; 
             margin: 0; 
             line-height: 1.6;
             overflow-y: scroll; 
-        }
-
-        .logo { 
-            font-weight: 900; 
-            letter-spacing: 2px; 
-            text-decoration: none; 
-            color: #fff; 
-            font-size: 1.2rem; 
-            display: flex;
-            align-items: center;
-            gap: 6px; 
-        }
-
-        .logo img {
-            height: 25px; 
-            width: auto;
-            object-fit: contain;
-            transition: transform 0.3s ease;
         }
 
         nav {
@@ -72,7 +45,8 @@
             align-items: center;
         }
 
-        .logo { font-weight: 900; letter-spacing: 2px; text-decoration: none; color: #fff; font-size: 1rem; }
+        .logo { font-weight: 900; letter-spacing: 2px; text-decoration: none; color: #fff; font-size: 1rem; display: flex; align-items: center; gap: 6px; }
+        .logo img { height: 25px; width: auto; object-fit: contain; }
 
         .nav-links { display: flex; gap: 30px; align-items: center; }
         .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
@@ -112,33 +86,12 @@
         }
 
         .new-ribbon-wrapper {
-            width: 100px;
-            height: 100px;
-            overflow: hidden;
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            z-index: 10;
+            width: 100px; height: 100px; overflow: hidden; position: absolute; top: -5px; right: -5px; z-index: 10;
         }
 
         .new-ribbon {
-            font-size: 0.7rem;
-            font-weight: 900;
-            color: #fff;
-            text-transform: uppercase;
-            text-align: center;
-            line-height: 25px;
-            transform: rotate(45deg);
-            width: 150px;
-            display: block;
-            background: var(--accent);
-            box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
-            position: absolute;
-            top: 22px;
-            right: -35px;
-            letter-spacing: 2px;
+            font-size: 0.7rem; font-weight: 900; color: #fff; text-transform: uppercase; text-align: center; line-height: 25px; transform: rotate(45deg); width: 150px; display: block; background: var(--accent); box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1); position: absolute; top: 22px; right: -35px; letter-spacing: 2px;
         }
-
 
         .card-image {
             min-height: 280px;
@@ -147,13 +100,13 @@
             position: relative;
         }
 
+        /* Dot overlay removed from card images */
         .card-image::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
-            background-size: 20px 20px;
+            display: none;
         }
+
+        .changelog-card { flex-direction: row !important; min-height: 200px; align-items: center; }
+        .changelog-card .card-content { padding: 40px 60px; }
 
         .card-content { padding: 40px; flex-grow: 1; display: flex; flex-direction: column; }
         .tag { color: var(--accent); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 15px; letter-spacing: 2px; }
@@ -165,6 +118,8 @@
             .container { grid-template-columns: 1fr; }
             h1, .subtitle { grid-column: span 1; }
             nav { padding: 20px 40px; }
+            .changelog-card { flex-direction: column !important; }
+            .card-link[style*="grid-column: span 2"] { grid-column: span 1 !important; }
         }
     </style>
 </head>
@@ -184,6 +139,17 @@
         <h1>Updates<span>.</span></h1>
         <p class="subtitle">Real-time intelligence and system logs.</p>
 
+        <a href="changelog/" class="card-link" style="grid-column: span 2;">
+            <div class="big-card changelog-card">
+                <div class="card-content">
+                    <div class="tag">Changelog</div>
+                    <h2>Server Changelog</h2>
+                    <p>Backend optimizations, security improvements, and quality of life updates across the entire Guardian ecosystem.</p>
+                    <div class="card-footer">SYSTEM LOG // 02.03.26</div>
+                </div>
+            </div>
+        </a>
+
         <a href="guardianradiov1/" class="card-link">
             <div class="big-card">
                 <div class="new-ribbon-wrapper">
@@ -198,6 +164,7 @@
                 </div>
             </div>
         </a>
+    </div>
 
 </body>
 </html>
