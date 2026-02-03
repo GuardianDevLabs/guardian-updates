@@ -8,14 +8,6 @@
     <meta name="title" content="GuardianLabs Changelog">
     <meta name="description" content="Stay up to GuardianLabs Updates ">
 
-    <meta property="og:title" content="GuardianLabs Changelog">
-    <meta property="og:description" content="Stay up to GuardianLabs Updates ">
-    <meta property="og:image" content="https://i.ibb.co/Dfh0Z75G/Guardian-Labs-Banner-4.png">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://i.ibb.co/Dfh0Z75G/Guardian-Labs-Banner-4.png">
-    <meta name="theme-color" content="#0179e4">
-    
     <style>
         :root { 
             --bg: #050505; 
@@ -66,15 +58,38 @@
                         url('https://i.ibb.co/cKZ261XH/Five-M-Redux-1024x576.webp') center/cover;
             display: flex;
             align-items: flex-end;
-            padding: 0 100px 60px 100px;
+            padding-bottom: 60px;
         }
 
-        .title-area { position: relative; z-index: 2; max-width: 900px; }
+        .content-container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+            box-sizing: border-box;
+            transform: translateX(-120px);
+        }
+
+        .title-area { position: relative; z-index: 2; }
+        
+        .back-link { 
+            display: inline-block; 
+            margin-bottom: 20px; 
+            color: var(--muted); 
+            text-decoration: none; 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            transition: 0.3s; 
+        }
+        .back-link:hover { color: var(--accent); transform: translateX(-5px); }
+
         .tag { color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 15px; display: block; }
         .title-area h1 { font-size: 4.5rem; margin: 0; font-weight: 900; letter-spacing: -3px; line-height: 0.9; }
         .meta { color: var(--muted); margin-top: 20px; font-weight: 600; font-size: 0.9rem; letter-spacing: 1px; }
 
-        .article-wrap { max-width: 850px; margin: 60px auto 120px; padding: 0 20px; }
+        .article-wrap { margin-top: 60px; margin-bottom: 120px; }
         .section-block { margin-bottom: 60px; }
         .sub-header { color: var(--accent); font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 25px; display: block;}
         .file-header { color: #fff; font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 25px; display: block;}
@@ -90,11 +105,9 @@
         .download-text a { color: var(--accent); font-weight: 700; text-decoration: none; transition: 0.3s; }
         .download-text a:hover { color: #fff; }
 
-        .back-link { display: inline-block; margin-top: 80px; color: var(--muted); text-decoration: none; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
-        .back-link:hover { color: var(--accent); transform: translateX(-5px); }
-
-        @media (max-width: 900px) { 
-            nav, .post-hero { padding-left: 40px; padding-right: 40px; }
+        @media (max-width: 1200px) { 
+            .content-container { transform: translateX(0); }
+            nav { padding: 0 40px; }
             .title-area h1 { font-size: 3rem; }
         }
     </style>
@@ -112,46 +125,48 @@
     </nav>
 
     <section class="post-hero">
-        <div class="title-area">
-            <span class="tag">System Update</span>
-            <h1>Server<br>Changelog</h1>
-            <div class="meta">SYSTEM LOG // 02.03.26 • RexZenn</div>
+        <div class="content-container">
+            <div class="title-area">
+                <a href="http://updates.guardiandevlabs.com/updates/" class="back-link">← Return to Hub</a>
+                <span class="tag">System Update</span>
+                <h1>Server<br>Changelog</h1>
+                <div class="meta">SYSTEM LOG // 02.03.26 • RexZenn</div>
+            </div>
         </div>
     </section>
 
-    <div class="article-wrap">
-        
-        <p style="font-weight: 800; color: #fff; margin-bottom: 40px; font-size: 1.2rem;">[UPDATED] Guardian Headtag & Gangtag Menu V2</p>
+    <div class="content-container">
+        <div class="article-wrap">
+            <p style="font-weight: 800; color: #fff; margin-bottom: 40px; font-size: 1.2rem;">[UPDATED] Guardian Headtag & Gangtag Menu V2</p>
 
-        <div class="section-block">
-            <span class="sub-header">[UPDATED]</span>
-            <ul class="changelog-list">
-                <li class="log-item">
-                    <div class="dot purple"></div>
-                    <span>Added an option via <strong>config.lua</strong> to change the position of the notification.</span>
-                </li>
-            </ul>
+            <div class="section-block">
+                <span class="sub-header">[UPDATED]</span>
+                <ul class="changelog-list">
+                    <li class="log-item">
+                        <div class="dot purple"></div>
+                        <span>Added an option via <strong>config.lua</strong> to change the position of the notification.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section-block">
+                <span class="file-header">[FILES CHANGED]</span>
+                <ul class="changelog-list">
+                    <li class="log-item">
+                        <div class="dot white"></div>
+                        <span>server.lua</span>
+                    </li>
+                    <li class="log-item">
+                        <div class="dot white"></div>
+                        <span>client.lua</span>
+                    </li>
+                </ul>
+            </div>
+
+            <p class="download-text">
+                The update can be found at <a href="https://portal.cfx.re/assets/granted-assets" target="_blank">https://portal.cfx.re/assets/granted-assets</a>
+            </p>
         </div>
-
-        <div class="section-block">
-            <span class="file-header">[FILES CHANGED]</span>
-            <ul class="changelog-list">
-                <li class="log-item">
-                    <div class="dot white"></div>
-                    <span>server.lua</span>
-                </li>
-                <li class="log-item">
-                    <div class="dot white"></div>
-                    <span>client.lua</span>
-                </li>
-            </ul>
-        </div>
-
-        <p class="download-text">
-            The update can be found at <a href="https://portal.cfx.re/assets/granted-assets" target="_blank">https://portal.cfx.re/assets/granted-assets</a>
-        </p>
-
-        <a href="http://updates.guardiandevlabs.com/updates/" class="back-link">← Return to Hub</a>
     </div>
 
 </body>
