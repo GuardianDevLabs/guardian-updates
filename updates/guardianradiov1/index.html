@@ -52,22 +52,8 @@
             align-items: center;
         }
 
-        .logo { 
-            font-weight: 900; 
-            letter-spacing: 2px; 
-            text-decoration: none; 
-            color: #fff; 
-            font-size: 1rem; 
-            display: flex;
-            align-items: center;
-            gap: 6px; 
-        }
-
-        .logo img {
-            height: 25px; 
-            width: auto;
-            object-fit: contain;
-        }
+        .logo { font-weight: 900; letter-spacing: 2px; text-decoration: none; color: #fff; font-size: 1rem; display: flex; align-items: center; gap: 6px; }
+        .logo img { height: 25px; width: auto; object-fit: contain; }
 
         .nav-links { display: flex; gap: 30px; align-items: center; }
         .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
@@ -80,15 +66,38 @@
                         url('https://i.ibb.co/mYDzTNF/New-Project.png') center/cover;
             display: flex;
             align-items: flex-end;
-            padding: 0 100px 60px 100px;
+            padding-bottom: 60px;
         }
 
-        .title-area { position: relative; z-index: 2; max-width: 900px; }
+        .content-container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+            box-sizing: border-box;
+            transform: translateX(-120px); 
+        }
+
+        .title-area { position: relative; z-index: 2; }
+        
+        .back-link { 
+            display: inline-block; 
+            margin-bottom: 20px; 
+            color: var(--muted); 
+            text-decoration: none; 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            transition: 0.3s; 
+        }
+        .back-link:hover { color: var(--accent); transform: translateX(-5px); }
+
         .tag { color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 15px; display: block; }
         .title-area h1 { font-size: 4.5rem; margin: 0; font-weight: 900; letter-spacing: -3px; line-height: 0.9; }
         .meta { color: var(--muted); margin-top: 20px; font-weight: 600; font-size: 0.9rem; letter-spacing: 1px; }
 
-        .article-wrap { max-width: 850px; margin: 60px auto 120px; padding: 0 20px; }
+        .article-wrap { margin-top: 60px; margin-bottom: 120px; }
         .section-block { margin-bottom: 80px; }
         .content-header { font-size: 2.2rem; font-weight: 900; margin-bottom: 20px; letter-spacing: -1px; color: #fff; }
         .sub-header { color: var(--accent); font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 10px; display: block;}
@@ -126,11 +135,9 @@
         .action-link-item span { color: #fff; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; border-bottom: 2px solid transparent; transition: 0.3s; }
         .action-link-item:hover span { border-bottom-color: var(--accent); color: var(--accent); }
 
-        .back-link { display: inline-block; margin-top: 80px; color: var(--muted); text-decoration: none; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
-        .back-link:hover { color: var(--accent); transform: translateX(-5px); }
-
-        @media (max-width: 900px) { 
-            nav, .post-hero { padding-left: 40px; padding-right: 40px; }
+        @media (max-width: 1200px) { 
+            .content-container { transform: translateX(0); }
+            nav { padding: 0 40px; }
             .title-area h1 { font-size: 3rem; }
         }
     </style>
@@ -148,67 +155,70 @@
     </nav>
 
     <section class="post-hero">
-        <div class="title-area">
-            <span class="tag">Official Release</span>
-            <h1>Guardian Radio<br>Version 1.0</h1>
-            <div class="meta">SYSTEM LOG // 02.02.26</div>
+        <div class="content-container">
+            <div class="title-area">
+                <a href="http://updates.guardiandevlabs.com/updates/" class="back-link">← Return to Hub</a>
+                <span class="tag">Official Release</span>
+                <h1>Guardian Radio<br>Version 1.0</h1>
+                <div class="meta">SYSTEM LOG // 02.02.26</div>
+            </div>
         </div>
     </section>
 
-    <div class="article-wrap">
-        
-        <div class="section-block">
-            <h2 class="content-header">📡✨ Guardian Radio V1 is LIVE! 🎉</h2>
-            <p class="main-text">
-                A modern, powerful radio system built for serious roleplay servers that want clean UI, full control, and unlimited scalability. Built for RP. 🛡️🔥
-            </p>
-            <img src="https://i.ibb.co/hR9R30B8/482d6c5338e66d4d147ea9a4d05716faa0c9ce9d.png" class="post-image">
-        </div>
+    <div class="content-container">
+        <div class="article-wrap">
+            
+            <div class="section-block">
+                <h2 class="content-header">📡✨ Guardian Radio V1 is LIVE! 🎉</h2>
+                <p class="main-text">
+                    A modern, powerful radio system built for serious roleplay servers that want clean UI, full control, and unlimited scalability. Built for RP. 🛡️🔥
+                </p>
+                <img src="https://i.ibb.co/hR9R30B8/482d6c5338e66d4d147ea9a4d05716faa0c9ce9d.png" class="post-image">
+            </div>
 
-        <div class="section-block">
-            <span class="sub-header">Core Features</span>
-            <ul class="dot-list">
-                <li class="dot-item">
-                    <span><strong>🚓 Police RTO Tab:</strong> Dedicated law enforcement radio interface. Perfect for structured comms and realistic radio traffic.</span>
-                </li>
-                <li class="dot-item">
-                    <span><strong>🧍 Civilian Tab:</strong> Simple and intuitive radio access for civilians. Clean layout designed for everyday RP.</span>
-                </li>
-                <li class="dot-item">
-                    <span><strong>⚙️ Settings Tab:</strong> Easily customize your radio experience on the fly.</span>
-                </li>
-            </ul>
-            <img src="https://i.ibb.co/GQZjVFg6/9b93c738564437c24855744260cc693193334fb6.png" class="post-image">
-        </div>
+            <div class="section-block">
+                <span class="sub-header">Core Features</span>
+                <ul class="dot-list">
+                    <li class="dot-item">
+                        <span><strong>🚓 Police RTO Tab:</strong> Dedicated law enforcement radio interface. Perfect for structured comms and realistic radio traffic.</span>
+                    </li>
+                    <li class="dot-item">
+                        <span><strong>🧍 Civilian Tab:</strong> Simple and intuitive radio access for civilians. Clean layout designed for everyday RP.</span>
+                    </li>
+                    <li class="dot-item">
+                        <span><strong>⚙️ Settings Tab:</strong> Easily customize your radio experience on the fly.</span>
+                    </li>
+                </ul>
+                <img src="https://i.ibb.co/GQZjVFg6/9b93c738564437c24855744260cc693193334fb6.png" class="post-image">
+            </div>
 
-        <div class="section-block">
-            <span class="sub-header">Technical Infrastructure</span>
-            <ul class="dot-list">
-                <li class="dot-item">
-                    <span><strong>📻 Unlimited Channels:</strong> No limits — create as many channels as your server needs.</span>
-                </li>
-                <li class="dot-item">
-                    <span><strong>🔐 ACE Permission Based:</strong> Full ACE integration. Restrict Police RTOs and channels to authorized roles.</span>
-                </li>
-                <li class="dot-item">
-                    <span><strong>⚡ Optimized & Lightweight:</strong> Minimal performance impact. Built to scale from small servers to large RP communities.</span>
-                </li>
-            </ul>
-        </div>
+            <div class="section-block">
+                <span class="sub-header">Technical Infrastructure</span>
+                <ul class="dot-list">
+                    <li class="dot-item">
+                        <span><strong>📻 Unlimited Channels:</strong> No limits — create as many channels as your server needs.</span>
+                    </li>
+                    <li class="dot-item">
+                        <span><strong>🔐 ACE Permission Based:</strong> Full ACE integration. Restrict Police RTOs and channels to authorized roles.</span>
+                    </li>
+                    <li class="dot-item">
+                        <span><strong>⚡ Optimized & Lightweight:</strong> Minimal performance impact. Built to scale from small servers to large RP communities.</span>
+                    </li>
+                </ul>
+            </div>
 
-        <div class="link-section">
-            <h2 class="content-header" style="font-size: 1.2rem; color: var(--muted);">ACCESS LINKS</h2>
-            <a href="https://guardianlabs.tebex.io/package/7258072" class="action-link-item">
-                <div class="link-dot"></div>
-                <span>Purchase Official</span>
-            </a>
-            <a href="https://www.youtube.com/watch?v=zHJ90jyf6-8" class="action-link-item">
-                <div class="link-dot"></div>
-                <span>Preview Showcase</span>
-            </a>
+            <div class="link-section">
+                <h2 class="content-header" style="font-size: 1.2rem; color: var(--muted);">ACCESS LINKS</h2>
+                <a href="https://guardianlabs.tebex.io/package/7258072" class="action-link-item">
+                    <div class="link-dot"></div>
+                    <span>Purchase Official</span>
+                </a>
+                <a href="https://www.youtube.com/watch?v=zHJ90jyf6-8" class="action-link-item">
+                    <div class="link-dot"></div>
+                    <span>Preview Showcase</span>
+                </a>
+            </div>
         </div>
-
-        <a href="http://updates.guardiandevlabs.com/updates/" class="back-link">← Return to Hub</a>
     </div>
 
 </body>
