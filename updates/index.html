@@ -101,7 +101,14 @@
             position: relative;
         }
 
-        .changelog-card { flex-direction: row !important; min-height: 140px; align-items: center; }
+        .changelog-card { flex-direction: row !important; min-height: 140px; align-items: stretch; }
+        .changelog-card .changelog-logo {
+            width: 500px;
+            min-width: 500px;
+            background-size: cover;
+            background-position: center;
+            border-right: 1px solid #1a1a1a;
+        }
         .changelog-card .card-content { padding: 30px 45px; }
 
         .card-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
@@ -122,6 +129,12 @@
             h1, .subtitle, .card-link[style*="grid-column: span 3"] { grid-column: span 1 !important; }
             nav { padding: 0 40px; }
             .changelog-card { flex-direction: column !important; }
+            .changelog-card .changelog-logo { 
+                width: 100%; 
+                height: 150px; 
+                border-right: none; 
+                border-bottom: 1px solid #1a1a1a;
+            }
         }
     </style>
 </head>
@@ -143,6 +156,8 @@
 
         <a href="changelog/" class="card-link" style="grid-column: span 3;">
             <div class="big-card changelog-card">
+                <div class="changelog-logo" style="background-image: url('https://i.ibb.co/cKZ261XH/Five-M-Redux-1024x576.webp');"></div>
+                
                 <div class="card-content">
                     <div class="tag">Changelog</div>
                     <h2>Server Changelog</h2>
@@ -170,5 +185,3 @@
 
 </body>
 </html>
-
-
